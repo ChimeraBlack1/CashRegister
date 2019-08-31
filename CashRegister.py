@@ -28,6 +28,7 @@ def num_coins(cash, price):
     p = 0.01
     
     change = round(cash - price, 2)
+    print("Thank you for your business, your change is: " + str(change))
     dimes = 0
     quarters = 0
     nickels = 0
@@ -81,7 +82,7 @@ def num_coins(cash, price):
         pennies = penniesToGiveRounded * p
         changeLeft = changeLeft - pennies
 
-    print("Thank you for your business, your change is: " + str(change))
+    
     print("gave " + str(int(quarters / q)) + " quarters")
     print("gave " + str(int(dimes / d)) + " dimes")
     print("gave " + str(int(nickels / n)) + " nickels")
