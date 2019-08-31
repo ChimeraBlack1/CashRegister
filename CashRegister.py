@@ -28,7 +28,7 @@ def num_coins(cash, price):
     p = 0.01
     
     change = round(cash - price, 2)
-    print("Thank you for your business, your change is: " + str(change))
+    print("Thank you for your business, your change is: $" + str(change))
     dimes = 0
     quarters = 0
     nickels = 0
