@@ -6,11 +6,9 @@
 # penny (1)
 # return the number of coins it would take to make change
 # want to use biggest coins first 
-import decimal
-dec = decimal.Decimal
 
 # Transaction
-cash = 400
+cash = 20
 price = 10.03
 
 
@@ -22,28 +20,33 @@ totalPenniesInTill = 100
 
 
 def num_coins(cash, price):
-    #coins
-    q = dec('0.25')
-    d = dec('0.10')
-    n = dec('0.05')
-    p = dec('0.01')
-
-    cash = dec(cash)
-    price = dec(price)
     
+    if cash < price:
+        print("You don't have enough money for this trasaction")
+        return
+    
+    totalInTill = (totalQuartersInTill *0.25) + (totalDimesInTill *0.10) + (totalNickelsInTill *0.05) + (totalPenniesInTill * 0.01)
     change = round(cash - price, 2)
+
+    if totalInTill < change:
+        print("I'm sorry but I can't make that much change... Would you like to use debit or credit instead?")
+        return
+
+
+    #coins
+    q = 0.25
+    d = 0.10
+    n = 0.05
+    p = 0.01
+
     print("Thank you for your business, your change is: $" + str(change))
     dimes = 0
     quarters = 0
     nickels = 0
     pennies = 0
-
-    if cash < price:
-        print("You don't have enough money for this trasaction")
-        return
-
+    
     # quarters
-    quartersToGive = dec(change / q)
+    quartersToGive = change / q
     
     if quartersToGive > totalQuartersInTill:
         changeLeft = change - totalQuartersInTill * q
@@ -79,16 +82,8 @@ def num_coins(cash, price):
     #pennies
     if changeLeft >= p:
         penniesToGive = changeLeft / p
-        if penniesToGive > totalPenniesInTill:
-            dimes = 0
-            quarters = 0
-            nickels = 0
-            pennies = 0
-            print("I'm sorry but I can't make that much change... Would you like to use debit or credit instead?")
-            return
-        else:
-            pennies = penniesToGive * p
-            changeLeft = changeLeft - pennies
+        pennies = penniesToGive * p
+        changeLeft = changeLeft - pennies
 
     
     print("gave " + str(int(quarters / q)) + " quarters")
