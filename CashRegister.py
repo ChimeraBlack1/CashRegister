@@ -3,7 +3,7 @@
 # quarter (25)
 # dime (10)
 # nickel (5)
-# pennie (1)
+# penny (1)
 # return the number of coins it would take to make change
 # want to use biggest coins first 
 
