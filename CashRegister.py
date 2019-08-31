@@ -51,7 +51,7 @@ def num_coins(cash, price):
         changeLeft = change - quarters
 
     #dimes
-    if changeLeft > d:
+    if changeLeft >= d:
         dimesToGive = changeLeft / d
         dimesToGiveRounded = int(dimesToGive)
         if dimesToGiveRounded > totalDimesInTill:
