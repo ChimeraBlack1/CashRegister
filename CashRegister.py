@@ -9,7 +9,7 @@
 
 # Transaction
 cash = 20
-price = 14.45
+price = 19.65
 
 # What if we had a limited supply of coins in our til?
 totalQuartersInTill = 75
