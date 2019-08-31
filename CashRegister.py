@@ -9,7 +9,7 @@
 
 # Transaction
 cash = 20
-price = 10.47
+price = 14.45
 
 # What if we had a limited supply of coins in our til?
 totalQuartersInTill = 75
@@ -78,7 +78,7 @@ def num_coins(cash, price):
             dimes = totalNickelsInTill * n
             print("I don't have enough nickels, I will have to give you smaller change, I'm sorry.")
         else:
-            nickels = nickelsToGiveRounded * n
+            nickels = nickelsToGive * n
             changeLeft = round(changeLeft - nickels, 2)
 
     #pennies
