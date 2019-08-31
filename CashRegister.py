@@ -50,8 +50,7 @@ def num_coins(cash, price):
     penniesToGive = 0
     
     # quarters
-    quartersToGive = int(change / q)
-    print(str(quartersToGive) + "fuck me")
+    quartersToGive = int(change / q)    
     if quartersToGive > totalQuartersInTill:
         changeLeft = round(change - totalQuartersInTill * q, 2)
         quarters = totalQuartersInTill * q
@@ -59,8 +58,6 @@ def num_coins(cash, price):
     else:
         quarters = quartersToGive * q
         changeLeft = round(change - quarters, 2)
-        print("change left after quarters: " + str(changeLeft))
-
 
     #dimes
     if changeLeft >= d:
